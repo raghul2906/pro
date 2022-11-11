@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #drawer class="sidenav" fixedInViewport
+            [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+            [mode]="(isHandset$ | async) ? 'over' : 'side'"
+            [opened]="(isHandset$ | async) === false">
+          <mat-toolbar>Menu</mat-toolbar>
+          <mat-nav-list>
+            <a mat-list-item href="#" routerLink="loan-dashboard">Loan Dashboard</a>
+            <a mat-list-item href="#" routerLink="/my-profile">My Profile</a>
+            <a mat-list-item href="#"routerLink="/accountinformation">Accountant Information</a>
+          </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <mat-toolbar color="primary">
+            <button
+              type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()"
+              *ngIf="isHandset$ | async">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span>Project Name</span>
+          </mat-toolbar>
+        </mat-sidenav-content>  
+    </mat-sidenav-container>
+   <div>
+    <router-outlet></router-outlet> </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

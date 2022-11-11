@@ -1,0 +1,17 @@
+.container{
+    align-items: center;
+    padding: 10px 120px 5px;
+    margin-left: 150px;
+}
+.previous {
+    text-align: left;
+    }
+    
+    .next {
+    text-align: right;
+    }
+    h1{
+        font-size: xx-large;
+        padding-top:90px;
+        padding-left: 270px;
+    }
